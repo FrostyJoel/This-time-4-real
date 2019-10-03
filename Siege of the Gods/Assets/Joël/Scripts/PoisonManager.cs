@@ -20,6 +20,7 @@ public class PoisonManager : MonoBehaviour
     {
         CheckDeath();
         CheckPoison();
+        GameOver();
     }
 
     public void CheckPoison()
@@ -62,8 +63,8 @@ public class PoisonManager : MonoBehaviour
                         spawn.GetComponent<TestWay>().goal = testEnemy.goal;
                     }
                 }
-                testEnemy.ResetAnime();
-                enemy.GetComponent<Animator>().SetTrigger("isDying");
+                //testEnemy.ResetAnime();
+                //enemy.GetComponent<Animator>().SetTrigger("isDying");
                 testEnemy.alive = false;
                 enemies.Remove(enemy);
                 Destroy(enemy, timeOfDeath);

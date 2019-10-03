@@ -1,14 +1,13 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TestWay : EnemyBase
 {
     public List<GameObject> waypoint = new List<GameObject>();
-    public static List<GameObject> staticWay;
     public Transform currentWaypoint;
     public Transform fakeWaypoint;
+    PoisonManager p;
     public int goal;
 
     float dis;
@@ -16,24 +15,22 @@ public class TestWay : EnemyBase
 
     void Awake()
     {
-        staticWay = waypoint;
-        PoisonManager p = GameObject.FindGameObjectWithTag("Manager").GetComponent<PoisonManager>();
-        anime = GetComponent<Animator>();
+        //anime = GetComponent<Animator>();
+        p = GameObject.FindGameObjectWithTag("Manager").GetComponent<PoisonManager>();
         movespeed = maxMovespeed;
         p.enemies.Add(gameObject);
         waypoint.AddRange(GameObject.FindGameObjectsWithTag("Goal"));
         waypoint.Add(GameObject.FindGameObjectWithTag("Base"));
     }
 
-    public virtual void Start()
+    public void Start()
     {
-        //TODO REMOVE STATIC
-        currentWaypoint = staticWay[goal].transform;
+        currentWaypoint = waypoint[goal].transform;
     }
 
     public void Update()
     {
-        anime.speed = UIManager.gameSpeed;
+        //anime.speed = UIManager.gameSpeed;
         Timer();
         ChangeGoal();
     }
@@ -48,8 +45,8 @@ public class TestWay : EnemyBase
                 if (dis > rad)
                 {
                     movespeed = maxMovespeed;
-                    ResetAnime();
-                    anime.SetTrigger("isWalking");
+                    //ResetAnime();
+                    //anime.SetTrigger("isWalking");
                     Vector3 direction = currentWaypoint.position - transform.position;
                     Quaternion rotation = Quaternion.LookRotation(direction);
                     transform.rotation = rotation;
@@ -63,20 +60,20 @@ public class TestWay : EnemyBase
                     if (fakeWaypoint == null)
                     {
                         CheckForGoal();
-                        currentWaypoint = staticWay[goal].transform;
+                        currentWaypoint = waypoint[goal].transform;
                     }
                 }
             }
             else
             {
-                currentWaypoint = staticWay[goal].transform;
+                currentWaypoint = waypoint[goal].transform;
             }
         }
     }
 
     public void CheckForGoal()
     {
-        if(goal < staticWay.Count - 1)
+        if(goal < waypoint.Count - 1)
         {
             goal++;
         }
@@ -110,18 +107,21 @@ public class TestWay : EnemyBase
 
     public void Attack(Collider enemy)
     {
-        ResetAnime();
-        anime.SetTrigger("isAttacking");
+        //ResetAnime();
+        //anime.SetTrigger("isAttacking");
         if (enemy.tag == "Ally")
         {
             enemy.GetComponent<AllyAttack>().health -= damage;
         }
         if (enemy.tag == "Base")
         {
+            print(gameObject.name);
             enemy.GetComponent<Base>().health -= damage;
+            health = 0;
         }
         cooldown = maxCooldown;
     }
+
     public void ResetAnime()
     {
         anime.ResetTrigger("isWalking");

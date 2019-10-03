@@ -217,6 +217,7 @@ MonoBehaviour:
   realTowerObject: {fileID: 3752970627570380279, guid: 1066ab4816ae67a409ac7953feaec5d2,
     type: 3}
   range: {fileID: 6133148556123850076}
+  camPos: {fileID: 0}
 --- !u!1001 &3752970627620828262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -224,16 +225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3752970626335379761}
     m_Modifications:
-    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
-        type: 3}
-      propertyPath: m_Name
-      value: CapsuleWFront
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6869234436720814154, guid: 030954a05b3fd814789eb97907eb99bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -288,6 +279,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
+        type: 3}
+      propertyPath: m_Name
+      value: CapsuleWFront
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8157113519420681861, guid: 030954a05b3fd814789eb97907eb99bf,
         type: 3}
@@ -368,21 +369,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8769586819141514248, guid: 7b4a1d0640f87b5419909d0eeb94b3fa,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8769586819141514248, guid: 7b4a1d0640f87b5419909d0eeb94b3fa,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8769586819141514248, guid: 7b4a1d0640f87b5419909d0eeb94b3fa,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4a1d0640f87b5419909d0eeb94b3fa, type: 3}
