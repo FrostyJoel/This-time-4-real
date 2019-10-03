@@ -12,6 +12,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         xPos = Input.GetAxis("Horizontal");
         zPos = Input.GetAxis("Vertical");
         movement.z = -xPos;

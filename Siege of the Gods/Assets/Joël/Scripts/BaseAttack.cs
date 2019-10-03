@@ -22,11 +22,7 @@ public class BaseAttack : AOITower
     {
         foreach (GameObject enemy in targetList)
         {
-            if(enemy != null)
-            {
-                enemy.GetComponent<TestWay>().fakeWaypoint = GetComponentInParent<Transform>();
-            }
-
+            enemy.GetComponent<TestWay>().fakeWaypoint = GetComponentInParent<Transform>();
         }
     }
 }

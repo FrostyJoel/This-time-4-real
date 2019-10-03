@@ -26,10 +26,7 @@ public class Tower : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            if (!targetList.Contains(other.gameObject))
-            {
-                targetList.Add(other.transform.gameObject);
-            }
+            targetList.Add(other.transform.gameObject);
         }
     }
     public virtual void OnTriggerStay(Collider other)
