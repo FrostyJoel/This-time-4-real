@@ -4661,6 +4661,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn(temp)
       objectReference: {fileID: 0}
+    - target: {fileID: 3548769017494175080, guid: 1b798ca14bf65cc4787aa582da535398,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 7380489981662649778, guid: 113fdfa9aed692041b6a3c8b38a60bcf,
+        type: 3}
     - target: {fileID: 3548769017494175081, guid: 1b798ca14bf65cc4787aa582da535398,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4714,6 +4720,16 @@ PrefabInstance:
     - target: {fileID: 3548769017494175081, guid: 1b798ca14bf65cc4787aa582da535398,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548769017562153867, guid: 1b798ca14bf65cc4787aa582da535398,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548769018531570327, guid: 1b798ca14bf65cc4787aa582da535398,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4784,6 +4800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342747631643150868, guid: 2946db25f38137b468bebf91d2d23a86,
+        type: 3}
+      propertyPath: timeOfDeath
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2946db25f38137b468bebf91d2d23a86, type: 3}

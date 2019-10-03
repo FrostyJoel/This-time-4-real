@@ -49,9 +49,16 @@ public class Shop : MonoBehaviour
                 currentPos = hit.point;
                 tower.gameObject.transform.position = currentPos;
             }
-            if(hit.transform.tag == "Tower" && Input.GetButtonDown("Fire1"))
+
+            if(hit.transform.tag == "Tower")
             {
-                print("Hey");
+                if (!towerOnMouse)
+                {
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        hit.transform.gameObject.GetComponentInChildren<SetRange>().TurnOnRange();
+                    }
+                }
             }
         }
         if(tower != null)
