@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour
 {
-    public int damage;
+    public float damage;
     public float rad;
 
     private void OnTriggerEnter(Collider other)

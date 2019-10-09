@@ -23,16 +23,21 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ui.UpdateWave(wave);
         time = roundtime;
     }
 
     public void StartSpawn()
     {
-        time = roundtime;
-        waveAmount += wave;
-        wave++;
-        spawning = true;
-        StartCoroutine(Spawn());
+        if(UIManager.gameSpeed > 0)
+        {
+            time = roundtime;
+            waveAmount += wave;
+            ui.UpdateWave(wave);
+            wave++;
+            spawning = true;
+            StartCoroutine(Spawn());
+        }
     }
 
     IEnumerator Spawn()

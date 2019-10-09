@@ -128,6 +128,7 @@ public class PathFinder
                 else if (todo.Contains(neigbouringGrid)) 
                 {
                     neigbouringGrid.SetColor(Color.blue);
+                    break;
                 }
                 else
                 {

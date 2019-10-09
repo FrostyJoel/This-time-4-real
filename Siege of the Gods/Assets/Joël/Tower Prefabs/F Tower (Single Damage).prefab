@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5641328958744271702}
   - component: {fileID: 5641328958744271697}
   - component: {fileID: 5641328958744271696}
-  - component: {fileID: 5641328958744271703}
   m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -79,19 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5641328958744271703
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5641328958744271701}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5641328959118771550
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +87,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5641328959118771545}
-  - component: {fileID: 1808714783336689094}
   m_Layer: 2
   m_Name: F Tower (Single Damage)
   m_TagString: Untagged
@@ -125,19 +110,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1808714783336689094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5641328959118771550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 1.89, z: 3}
-  m_Center: {x: 0, y: 1.03, z: 0}
 --- !u!1 &5641328959742982559
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +153,7 @@ GameObject:
   - component: {fileID: 8660518979830681403}
   m_Layer: 2
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

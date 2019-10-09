@@ -13,7 +13,7 @@ public class SingleFireTower : Tower
     public float aimAssist;
     public float turnSpeed;
 
-    public void SingleFire(int amountDamage)
+    public void SingleFire(float amountDamage)
     {
         foreach (GameObject enemies in targetList)
         {
@@ -26,7 +26,7 @@ public class SingleFireTower : Tower
             }
         }
     }
-    public void SingelDestroy(int amountDamage)
+    public void SingelDestroy(float amountDamage)
     {
         foreach (GameObject enemies in targetList)
         {

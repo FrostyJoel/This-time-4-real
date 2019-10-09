@@ -7,31 +7,22 @@ public class TestWay : EnemyBase
     public List<GameObject> waypoint = new List<GameObject>();
     public Transform currentWaypoint;
     public Transform fakeWaypoint;
-    PoisonManager p;
     public int goal;
 
     float dis;
     public float rad = 1f;
 
-    void Awake()
-    {
-        //anime = GetComponent<Animator>();
-        p = GameObject.FindGameObjectWithTag("Manager").GetComponent<PoisonManager>();
-        movespeed = maxMovespeed;
-        p.enemies.Add(gameObject);
-        waypoint.AddRange(GameObject.FindGameObjectsWithTag("Goal"));
-        waypoint.Add(GameObject.FindGameObjectWithTag("Base"));
-    }
 
     public void Start()
     {
+        waypoint.AddRange(GameObject.FindGameObjectsWithTag("Goal"));
+        waypoint.Add(GameObject.FindGameObjectWithTag("Base"));
         currentWaypoint = waypoint[goal].transform;
     }
 
-    public void Update()
+    public override void Update()
     {
-        //anime.speed = UIManager.gameSpeed;
-        Timer();
+        base.Update();
         ChangeGoal();
     }
 
@@ -54,7 +45,6 @@ public class TestWay : EnemyBase
                 }
                 else
                 {
-                    CheckifBlocked();
                     //ResetAnime();
                     //anime.SetTrigger("isIdle");
                     if (fakeWaypoint == null)
@@ -63,6 +53,7 @@ public class TestWay : EnemyBase
                         currentWaypoint = waypoint[goal].transform;
                     }
                 }
+                CheckifBlocked();
             }
             else
             {
@@ -87,9 +78,9 @@ public class TestWay : EnemyBase
     {
         Vector3 spherepos = transform.localPosition;
         Collider[] collisions = Physics.OverlapSphere(spherepos, rad);
-        if (cooldown <= 0)
+        for (int i = 0; i < collisions.Length; i++)
         {
-            for (int i = 0; i < collisions.Length; i++)
+            if (cooldown <= 0)
             {
                 if (collisions[i].tag == "Ally")
                 {

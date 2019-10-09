@@ -8,19 +8,20 @@ public class Shop : MonoBehaviour
     public GameObject currentTower;
     public GameObject tower;
     public GameObject realTower;
+    public List<GameObject> rangers = new List<GameObject>();
 
     public UIManager ui;
 
     public bool canBuild;
     public bool towerOnMouse;
     public bool building;
+    public bool ranger;
 
     public int price;
 
     public float rad;
 
     public Vector3 currentPos;
-
     Ray mouse;
     RaycastHit hit;
     private void Awake()
@@ -30,6 +31,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rangers.AddRange(GameObject.FindGameObjectsWithTag("Range"));
         mouse = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(mouse,out hit,Mathf.Infinity))
         {
@@ -40,9 +42,7 @@ public class Shop : MonoBehaviour
             }
             if (EventSystem.current.IsPointerOverGameObject() && currentTower != null && towerOnMouse)
             {
-                Debug.Log("Hey");
-                Destroy(tower);
-                towerOnMouse = false;
+                DestroyFakeTower();
             }
             if (towerOnMouse && currentTower != null)
             {
@@ -57,6 +57,7 @@ public class Shop : MonoBehaviour
                     if (Input.GetButtonDown("Fire1"))
                     {
                         hit.transform.gameObject.GetComponentInChildren<SetRange>().TurnOnRange();
+                        ui.selectedTower = hit.transform.gameObject;
                     }
                 }
             }
@@ -98,6 +99,17 @@ public class Shop : MonoBehaviour
         }
     }
 
+    public void DestroyFakeTower()
+    {
+        if(tower.GetComponentInChildren<HighlightPath>() != null)
+        {
+            tower.GetComponentInChildren<HighlightPath>().SelectedPaths(tower.GetComponentInChildren<SetRange>().realTowerObject.GetComponentInChildren<Tower>().rad, false);
+        }
+        Destroy(tower);
+        towerOnMouse = false;
+        canBuild = false;
+    }
+
     public void Build()
     {
         ui.totalMoney -= price;
@@ -108,8 +120,8 @@ public class Shop : MonoBehaviour
     }
     public void CancelBuild()
     {
-        Destroy(tower);
         currentTower = null;
+        DestroyFakeTower();
         building = false;
     }
 
@@ -122,5 +134,12 @@ public class Shop : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(hit.point, rad);
+    }
+    public void ResetRanges()
+    {
+        foreach (GameObject ranges in rangers)
+        {
+            ranges.SetActive(false);
+        }
     }
 }

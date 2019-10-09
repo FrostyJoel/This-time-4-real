@@ -6,15 +6,41 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public int totalMoney;
-    public Text money;
     public int totalTimeLeft;
-    public Text timeLeft;
     public int waveCounter;
-    public Text waveAmount;
-    public Text fastForward;
     static public int gameSpeed = 1;
+    bool ableToSell;
     int tempSpeed = 1;
 
+    public GameObject selectedTower;
+    int selectedSellPrice;
+    public Text money;
+    public Text timeLeft;
+    public Text gameOver;
+    public Text waveAmount;
+    public Text enemyAmount;
+    public Text baseAmount;
+    public Text fastForward;
+    public Text sellTower;
+
+    private void Update()
+    {
+        if(gameSpeed >= 1)
+        {
+            fastForward.text = "Speed:\n" + gameSpeed.ToString();
+        }
+        else
+        {
+            fastForward.text = "Speed:\n" + tempSpeed.ToString();
+        }
+        if(selectedTower == null)
+        {
+            sellTower.text = "Sell:";
+        }
+        enemyAmount.text = "Enemies Left:\n" + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
+        money.text = "Drachma: " + totalMoney.ToString();
+        timeLeft.text = "Time Until Next Wave: " + totalTimeLeft.ToString();
+    }
     public void FastForward()
     {
         if (gameSpeed > 0 && gameSpeed < 3)
@@ -40,17 +66,40 @@ public class UIManager : MonoBehaviour
             gameSpeed = tempSpeed;
         }
     }
-    private void Update()
+    public void GameOver()
     {
-        if(gameSpeed >= 1)
+        gameOver.gameObject.SetActive(true);
+        gameOver.text = "Game over";
+    }
+    public void UpdateTower(int sellprice)
+    {
+        if(sellprice > 0)
         {
-            fastForward.text = "Speed:\n" + gameSpeed.ToString();
+            selectedSellPrice = sellprice;
+            sellTower.text = "Sell:\n" + "Drachma: " + sellprice.ToString();
+            ableToSell = true;
         }
         else
         {
-            fastForward.text = "Speed:\n" + tempSpeed.ToString();
+            sellTower.text = "Sell:";
+            ableToSell = false;
         }
-        money.text = "Drachma: " + totalMoney.ToString();
-        timeLeft.text = "Time Until Next Wave: " + totalTimeLeft.ToString();
+    }
+    public void Sell()
+    {
+        if (ableToSell)
+        {
+            Destroy(selectedTower);
+            totalMoney += selectedSellPrice;
+            selectedSellPrice = 0;
+        }
+    }
+    public void UpdateWave(int wave)
+    {
+        waveAmount.text = "Wave: " + wave.ToString();
+    }
+    public void UpdateBase(float health)
+    {
+        baseAmount.text = "Base Health:\n" + Mathf.RoundToInt(health).ToString();
     }
 }

@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Path
+  - Manager
+  - Tile
+  - Enemy
+  - UI
+  - Tower
+  - Range
+  - Ally
+  - Goal
+  - Base
+  - Health
+  - Highlighter
   layers:
   - Default
   - TransparentFX

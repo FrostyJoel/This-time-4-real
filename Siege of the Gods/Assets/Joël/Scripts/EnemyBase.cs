@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -11,16 +12,29 @@ public class EnemyBase : MonoBehaviour
     private float tick;
     public float maxTick = 2f;
 
-    public int amountOfPoisonDamage = 0;
-    public int health;
-    public int damage;
+    public float health;
+    public float maxhealth;
+    public float damage;
+    public float amountOfPoisonDamage = 0;
+
     public int money;
 
     public bool alive = true;
     public bool tickDamage = false;
 
     public Animator anime;
+    public Image healthImage;
+    public Image childImage;
+    PoisonManager p;
 
+    void Awake()
+    {
+        health = maxhealth;
+        //anime = GetComponent<Animator>(); 
+        p = GameObject.FindGameObjectWithTag("Manager").GetComponent<PoisonManager>();
+        movespeed = maxMovespeed;
+        p.enemies.Add(gameObject);
+    }
     public IEnumerator Poisoning()
     {
         while (true)
@@ -37,6 +51,14 @@ public class EnemyBase : MonoBehaviour
             }
             yield return new WaitForSeconds(3f);
         }
+    }
+
+    public virtual void Update()
+    {
+        //anime.speed = UIManager.gameSpeed;
+        healthImage.transform.LookAt(Camera.main.transform.position);
+        childImage.fillAmount = health / maxhealth;
+        Timer();
     }
 
     public void Timer()

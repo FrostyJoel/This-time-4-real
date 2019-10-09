@@ -45,7 +45,7 @@ public class AllySpawnerTower : Tower
         GameObject randomPath = paths[Random.Range(0, paths.Count)];
         Vector3 spawnPos = new Vector3(randomPath.transform.position.x, randomPath.transform.position.y + 1f, randomPath.transform.position.z);
         GameObject towerSpawn = Instantiate(ally,spawnPos,Quaternion.identity);
-        towerSpawn.GetComponent<AllyTargeting>().mainTower = gameObject;
+        towerSpawn.GetComponentInChildren<AllyAttack>().mainTower = gameObject;
         spawned = true;
     }
 }

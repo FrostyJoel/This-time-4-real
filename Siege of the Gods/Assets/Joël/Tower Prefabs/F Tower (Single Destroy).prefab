@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 3752970627468440575}
   - component: {fileID: 3752970627468440568}
   - component: {fileID: 3752970627468440569}
-  - component: {fileID: 3752970627468440574}
   m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -110,19 +109,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3752970627468440574
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752970627468440572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3752970627570380279
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +118,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3752970627570380272}
-  - component: {fileID: 6110265152505370388}
   m_Layer: 2
   m_Name: F Tower (Single Destroy)
   m_TagString: Untagged
@@ -156,19 +141,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6110265152505370388
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752970627570380279}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 1.89, z: 3}
-  m_Center: {x: 0, y: 1.03, z: 0}
 --- !u!1 &6659337469956574154
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +153,7 @@ GameObject:
   - component: {fileID: 6111911037653075312}
   m_Layer: 2
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +189,6 @@ MonoBehaviour:
   realTowerObject: {fileID: 3752970627570380279, guid: 1066ab4816ae67a409ac7953feaec5d2,
     type: 3}
   range: {fileID: 6133148556123850076}
-  camPos: {fileID: 0}
 --- !u!1001 &3752970627620828262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +196,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3752970626335379761}
     m_Modifications:
+    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
+        type: 3}
+      propertyPath: m_Name
+      value: CapsuleWFront
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6869234436720814154, guid: 030954a05b3fd814789eb97907eb99bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -279,16 +260,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
-        type: 3}
-      propertyPath: m_Name
-      value: CapsuleWFront
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8157113519420681861, guid: 030954a05b3fd814789eb97907eb99bf,
         type: 3}

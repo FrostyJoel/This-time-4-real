@@ -1,83 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2419723789171238182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3392117601977639211}
-  - component: {fileID: 4750385007040378378}
-  - component: {fileID: 3175572596422086098}
-  m_Layer: 0
-  m_Name: CameraPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3392117601977639211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419723789171238182}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2019124, y: 2.5869856, z: 2.791924}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5641328959118771545}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &4750385007040378378
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419723789171238182}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &3175572596422086098
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419723789171238182}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5641328958744271701
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +122,6 @@ Transform:
   m_Children:
   - {fileID: 2610764812908995314}
   - {fileID: 6142846232164707484}
-  - {fileID: 3392117601977639211}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -313,6 +234,7 @@ MonoBehaviour:
   maxCooldown: 0.5
   cooldown: 1
   amountOfDamage: 1
+  sellCost: 25
   manager: {fileID: 0}
   targetList: []
   range: {fileID: 0}
@@ -337,7 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realTowerObject: {fileID: 5641328959118771550}
   range: {fileID: 5029497561693188378}
-  camPos: {fileID: 2419723789171238182}
 --- !u!1001 &3209961137372567700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,6 +352,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5641328959742982552}
     m_Modifications:
+    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
+        type: 3}
+      propertyPath: m_Name
+      value: CapsuleWFront
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6869234436720814154, guid: 030954a05b3fd814789eb97907eb99bf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -485,16 +416,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
-        type: 3}
-      propertyPath: m_Name
-      value: CapsuleWFront
-      objectReference: {fileID: 0}
-    - target: {fileID: 7570328372434770521, guid: 030954a05b3fd814789eb97907eb99bf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8157113519420681861, guid: 030954a05b3fd814789eb97907eb99bf,
         type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AOITower : Tower
 {
-    public void AOIDamage(int amountofdamage)
+    public void AOIDamage(float amountofdamage)
     {
         if (cooldown <= 0)
         {
@@ -16,7 +16,7 @@ public class AOITower : Tower
         }
     }
 
-    public void AOIPoison(float poisonTick, int amountofdamage)
+    public void AOIPoison(float poisonTick, float amountofdamage)
     {
         if (cooldown <= 0)
         {

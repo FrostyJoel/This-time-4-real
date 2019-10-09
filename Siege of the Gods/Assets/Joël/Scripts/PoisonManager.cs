@@ -18,6 +18,7 @@ public class PoisonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ui.UpdateBase(homebase.GetComponent<Base>().health);
         CheckDeath();
         CheckPoison();
         GameOver();
@@ -78,6 +79,7 @@ public class PoisonManager : MonoBehaviour
         if(b.health <= 0)
         {
             UIManager.gameSpeed = 0;
+            ui.GameOver();
         }
     }
 }

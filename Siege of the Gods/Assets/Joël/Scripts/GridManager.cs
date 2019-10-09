@@ -41,7 +41,6 @@ public class GridManager : MonoBehaviour
             if (g.tile_cost > minimumWallCost)
             {
                 Instantiate(tree, new Vector3(tile.transform.position.x, 0.5f, tile.transform.position.z), tree.transform.rotation);
-                Debug.Log("Hey i'm Tree");
             }
         }
 

@@ -8,8 +8,9 @@ public class Tower : MonoBehaviour
     public float rad;
     public float maxCooldown;
     public float cooldown;
+    public float amountOfDamage;
 
-    public int amountOfDamage;
+    public int sellCost;
 
     public PoisonManager manager;
     public List<GameObject> targetList = new List<GameObject>();

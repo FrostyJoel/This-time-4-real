@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7539855983500182600}
   - component: {fileID: 4200875118838055446}
+  - component: {fileID: 5241712115386037114}
   m_Layer: 2
   m_Name: GameObject
   m_TagString: Tower
@@ -48,6 +49,23 @@ MonoBehaviour:
   realTowerObject: {fileID: 4297328466431716840, guid: a97f8aa28d0b3184c8a38eea6999c0b8,
     type: 3}
   range: {fileID: 4214841211175559694}
+--- !u!114 &5241712115386037114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771951443268022391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381f11cdeb7edb849860c532aea74940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlight: {fileID: 7860219749041656098, guid: 4be66b0868a24b64ba458b4ac42e6dc8,
+    type: 3}
+  allHighlights: []
+  path: []
+  donePath: []
 --- !u!1 &4297328466431716840
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +75,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4297328466431713813}
-  - component: {fileID: -453730825452378404}
   m_Layer: 2
   m_Name: F Tower (Ally Spawner)
   m_TagString: Untagged
@@ -81,19 +98,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-453730825452378404
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4297328466431716840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 1.89, z: 3}
-  m_Center: {x: 0, y: 1.03, z: 0}
 --- !u!1 &4297328466497411251
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +140,6 @@ GameObject:
   - component: {fileID: 4297328466809123456}
   - component: {fileID: 4297328466809123469}
   - component: {fileID: 4297328466809123458}
-  - component: {fileID: 4297328466809123459}
   m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -204,19 +207,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4297328466809123459
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4297328466809123457}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4297328465848465847
 PrefabInstance:
   m_ObjectHideFlags: 0
